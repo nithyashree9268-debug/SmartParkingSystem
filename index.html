@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Parking Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Smart Parking Management System</h1>
+    <p>Data Structure Based Parking Application</p>
+</header>
+
+<nav>
+    <button onclick="showSection('dashboard')">Dashboard</button>
+    <button onclick="showSection('entry')">Vehicle Entry</button>
+    <button onclick="showSection('exit')">Vehicle Exit</button>
+    <button onclick="showSection('queue')">Waiting Queue</button>
+    <button onclick="showSection('history')">History</button>
+</nav>
+
+<main>
+
+<section id="dashboard" class="section">
+    <h2>Parking Dashboard</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Total Slots</h3>
+            <p id="totalSlots">10</p>
+        </div>
+
+        <div class="card">
+            <h3>Available</h3>
+            <p id="availableSlots">10</p>
+        </div>
+
+        <div class="card">
+            <h3>Occupied</h3>
+            <p id="occupiedSlots">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Waiting</h3>
+            <p id="waitingCount">0</p>
+        </div>
+    </div>
+
+    <h2>Parking Slots</h2>
+
+    <div id="parkingSlots" class="parking-grid"></div>
+</section>
+
+
+<section id="entry" class="section">
+    <h2>Vehicle Entry</h2>
+
+    <form id="entryForm">
+
+        <label>Vehicle Number</label>
+        <input type="text" id="vehicleNumber"
+               placeholder="Example: KA01AB1234" required>
+
+        <label>Vehicle Type</label>
+
+        <select id="vehicleType">
+            <option value="Car">Car</option>
+            <option value="Bike">Bike</option>
+            <option value="Auto">Auto</option>
+        </select>
+
+        <button type="submit">Park Vehicle</button>
+
+    </form>
+
+    <p id="entryMessage"></p>
+</section>
+
+
+<section id="exit" class="section">
+    <h2>Vehicle Exit</h2>
+
+    <input type="text"
+           id="exitVehicleNumber"
+           placeholder="Enter Vehicle Number">
+
+    <button onclick="exitVehicle()">Vehicle Exit</button>
+
+    <p id="exitMessage"></p>
+</section>
+
+
+<section id="queue" class="section">
+    <h2>Waiting Queue</h2>
+
+    <div id="queueList"></div>
+</section>
+
+
+<section id="history" class="section">
+    <h2>Parking History</h2>
+
+    <div id="historyList"></div>
+</section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
